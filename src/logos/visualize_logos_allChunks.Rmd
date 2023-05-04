@@ -1,0 +1,375 @@
+```{r, include=FALSE}
+
+library(pacman)
+p_load(dplyr, tidyr, huxtable)
+
+format_table <- function(df_merge_top, marb) {
+  df_merge_sel <- df_merge_top%>%
+    filter(marbox...1==!!marb)%>%
+    select(-marbox...1, -marbox...4)
+  
+  ht <- as_hux(df_merge_sel, add_colnames=FALSE, add_rownames=FALSE)%>%
+    insert_row(c("Peptide", "Count", "Peptide", "Count"))%>%
+    insert_row(c("INI", "", "96H", ""))%>%
+    merge_cells(row = 1, col = 1:2)%>%
+    merge_cells(row = 1, col = 3:4)%>%
+    set_align(row = 1:2, col = everywhere, value="center")%>%
+    set_italic(row = 1:2, col = everywhere)%>%
+    set_bold(row = 1:2, col = everywhere)%>%
+    set_top_border(row = 1, col = everywhere) %>%
+    set_bottom_border(row = 2, col = everywhere) %>%
+    set_bottom_border(row = final(1), col = everywhere)%>%
+    #set_left_border(col= 3, row = everywhere, 8)%>%
+    set_font_size(row = everywhere, col = everywhere, 8)%>%
+    set_number_format(-1, "cnt...3", fmt_pretty())%>%
+    set_number_format(-1, "cnt...6", fmt_pretty())%>%
+    set_font_size(row = everywhere, col = everywhere, 13)
+  return(ht)
+}
+
+```
+
+```{r, echo=FALSE}
+i <- 1
+marb <- marb_order[i]
+```
+
+<!--1-->
+# <span style="color: red;">`r marb`</span>
+
+<div class = "row">
+<div class = "column">
+
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+
+```
+</div>
+</div>
+
+<!--2-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+
+```
+</div>
+</div>
+
+<!--3-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--4-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--5-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--6-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--7-->
+# <span style="color: red;">`r marb`</span>
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--8-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--9-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--10-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--11-->
+# <span style="color: red;">`r marb`</span>
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--12-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--13-->
+# <span style="color: red;">`r marb`</span>
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>
+
+<!--14-->
+# `r marb`
+
+<div class = "row">
+<div class = "column">
+```{r, echo=FALSE}
+tb <- format_table(df_merge_top, marb)
+tb
+```
+</div>
+<div class = "column">
+```{r, echo=FALSE, out.width="50%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+</div>
+</div>

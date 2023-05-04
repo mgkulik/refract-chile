@@ -1,0 +1,202 @@
+```{r, echo=FALSE}
+i <- 1
+marb <- marb_order[i]
+```
+
+<!--1-->
+# <span style="color: red;">`r marb`</span>
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+
+```
+
+<!--2-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+
+```
+
+<!--3-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--4-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--5-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--6-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--7-->
+# <span style="color: red;">`r marb`</span>
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--8-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--9-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--10-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--11-->
+# <span style="color: red;">`r marb`</span>
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--12-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--13-->
+# <span style="color: red;">`r marb`</span>
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```
+
+<!--14-->
+# `r marb`
+
+```{r, echo=FALSE, out.width="25%", out.height="20%", fig.cap=" ", fig.show='hold', fig.align='center', result = 'asis'}
+
+source(here::here("visualize_logos_chunk.R"))
+knitr::kable(titles, "simple", col.names = rep("", length(titles)), align='c')
+if (length(titles)==2) {
+  knitr::include_graphics(c(sel_fig1, sel_fig2))
+} else {
+  knitr::include_graphics(c(sel_fig1, sel_fig2, sel_fig3, sel_fig4))
+}
+```

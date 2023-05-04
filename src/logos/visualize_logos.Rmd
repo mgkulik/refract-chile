@@ -1,0 +1,81 @@
+---
+output: html_document
+---
+
+<style type="text/css">
+  .main-container {
+    max-width: 100% !important;
+    margin: auto;
+  }
+  .row {display: flex;}
+  .column {flex: 50%;}
+</style>
+
+```{r data_management, echo=FALSE, include=FALSE}
+source(here::here("data_management.R"))
+
+df_ini_top <- df_ini%>%
+  group_by(marbox)%>%
+  slice_head(n=5)%>%
+  select(marbox, peptide, cnt)
+
+df_96h_top <- df_96h%>%
+  group_by(marbox)%>%
+  slice_head(n=5)%>%
+  select(marbox, peptide, cnt)
+
+df_merge_top <- cbind(df_ini_top, df_96h_top)
+rm(df_ini_top, df_96h_top)
+
+```
+
+```{r, include=FALSE}
+logos_path <- here::here(paste0(files_path, "logos"))
+
+list_plots <- list.files(logos_path, pattern = ".png", include.dirs = FALSE)
+list_plots_comp <- list.files(logos_path, pattern = ".png", full.names = TRUE)
+marb_order <- c("marRAB", "yba0", "rob", "acnA", "acrAB", "fldB", "fldA", "fpr", "hdeA", "mdtG", "poxB", "purA", "ribA", "slp")
+```
+
+<!-- ###################################### INICIAL COMPARISON ###################################### -->
+
+# INITIAL COMPARISON 
+
+## Invalid codons removed and 3 allowed mismatches in marbox region of 20 NTs
+
+```{r, include=FALSE}
+
+#plots_order <- c("0_ini_ori", "0_ini.png", "0_96h_ori", "0_96h.png")
+#titles <-data.frame(t(unlist(c("INI Original", "INI no invalid codon", "96h Original", "96h no invalid codon"))))
+plots_order <- c("0_ini.png", "0_96h.png")
+titles <-data.frame(t(unlist(c("INI", "96h"))))
+```
+
+```{r initial_comparison, child = here::here("visualize_logos_allChunks.Rmd")}
+
+```
+
+## COUNTS BELLOW 1000 REMOVED
+
+```{r, include=FALSE}
+
+plots_order <- c("0_ini.png", "1000_ini.png", "0_96h.png", "1000_96h.png")
+titles <-data.frame(t(unlist(c("INI", "INI above 1000", "96h", "96h above 1000"))))
+```
+
+```{r above_1000, child = here::here("visualize_logos_allChunks2.Rmd")}
+
+```
+
+
+## LOGOS BELOW 1000
+
+```{r, include=FALSE}
+
+plots_order <- c("0_ini.png", "1000_ini_rev.png", "0_96h.png", "1000_96h_rev.png")
+titles <-data.frame(t(unlist(c("INI", "INI below 1000", "96h", "96h below 1000"))))
+```
+
+```{r below_1000, child = here::here("visualize_logos_allChunks2.Rmd")}
+
+```

@@ -15,9 +15,9 @@ from itertools import combinations, product, permutations
 
 np.set_printoptions(suppress=True)
 
-SOURCE = "withMUTATIONS/covariance_aa_aa/"
+SOURCE = "withMUTATIONS/covariance_aa_aa/sources/"
 
-path_in = '/home/magoncal/Documents/data/projects/refract-chile/refract-data/'+SOURCE
+path_in = os.path.join(os.path.dirname(os.getcwd()),'refract-data', SOURCE)
 marboxes = ["marRAB", "yba0", "rob", "acnA", "acrAB", "fldB", "fldA", "fpr", "hdeA", "mdtG", "poxB", "purA", "ribA", "slp"]
 AA_ORDER1 = ['C','F','W','Y']
 AA_ORDER1_IDX = {'C':0,'F':1,'W':2,'Y':3}
@@ -66,8 +66,8 @@ def get_peptide_score(argv):
     print()
 
     for marb in marboxes:
-        mat_deltaE_1 = np.load(path_in+'sources/'+marb+'_ratios_pos1.npy', allow_pickle = True)
-        mat_deltaE_2 = np.load(path_in+'sources/'+marb+'_ratios_posN.npy', allow_pickle = True)
+        mat_deltaE_1 = np.load(path_in+marb+'_ratios_pos1.npy', allow_pickle = True)
+        mat_deltaE_2 = np.load(path_in+marb+'_ratios_posN.npy', allow_pickle = True)
     
         all_deltaE = np.concatenate((mat_deltaE_1[idx1[:, 0],idx1[:, 1], idx1[:,2]], mat_deltaE_2[idx2[:, 0],idx2[:, 1], idx2[:,2]]))
         sum_deltaE = np.sum(mat_deltaE_1[idx1[:, 0],idx1[:, 1], idx1[:,2]])+np.sum(mat_deltaE_2[idx2[:, 0],idx2[:, 1], idx2[:,2]])
