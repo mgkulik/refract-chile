@@ -17,7 +17,7 @@ np.set_printoptions(suppress=True)
 
 SOURCE = "withMUTATIONS/covariance_aa_aa/"
 
-path_in = '/home/magoncal/Documents/data/projects/idr_cook/refract_chile/refract-data/'+SOURCE
+path_in = '/home/magoncal/Documents/data/projects/refract-chile/refract-data/'+SOURCE
 marboxes = ["marRAB", "yba0", "rob", "acnA", "acrAB", "fldB", "fldA", "fpr", "hdeA", "mdtG", "poxB", "purA", "ribA", "slp"]
 AA_ORDER1 = ['C','F','W','Y']
 AA_ORDER1_IDX = {'C':0,'F':1,'W':2,'Y':3}
@@ -63,6 +63,7 @@ def get_peptide_score(argv):
     idx1 = np.array([[i]+list(j) for i,j in zip(range(5), pairs_pept[0:5])])
     # Extracting indexes for matrix 2 (16x16)
     idx2 = np.array([[i]+list(j) for i,j in zip(range(10), pairs_pept[5:])])
+    print()
 
     for marb in marboxes:
         mat_deltaE_1 = np.load(path_in+'sources/'+marb+'_ratios_pos1.npy', allow_pickle = True)
