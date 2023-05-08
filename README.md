@@ -1,8 +1,8 @@
 # REFRACT Chile MGKulik
 Repository to deposit relevant code generated during my trip to Santiago through the REFRACT program between Jan/April 2023.
 
-### Main function
-___
+## Main function
+
 
 The following files are available:
 
@@ -16,8 +16,8 @@ python get_peptide_score.py -i <peptide>
 
 *Example:* python get_peptide_score.py -i FEKDAD
 
-### Additional functions
-___
+## Additional functions
+
 
 The following scripts must be executed IN ORDER to re-generate all outputs:<br>
 Source files are required and directory tree CANNOT be changed.
@@ -28,8 +28,7 @@ Packages concurrent.futures and biopython are required. Parallelization is neces
 **get_covariance_aa.py:** Generate the matrices with the theta score per position (5 matrices 4x16 and 10 matrices 16x16).
 If executed, the matrices used in the previous version will be changed.
 
-### Extra scripts
-___
+## Extra scripts
 
 The following files are mostly scripts generated to support the analysis and some extra functions to make reporting easier:
 
@@ -41,9 +40,8 @@ The following files are mostly scripts generated to support the analysis and som
 
 **logos/automate_logo.py:** Implemented a web scraper to automate the logos generation using [enoLOGOS](http://www.benoslab.pitt.edu/cgi-bin/enologos/enologos.cgi). Packages selenium and webdriver_manager are required. The execution is too slow at the moment because of the response times of the website.
 
-**logos/visualize_logos_chunk.R, visualize_logos.Rmd, visualize_logos_allChunks.Rmd and visualize_logos_allChunks2.Rmd:** Nested source files that allow an HTML output of the logos for comparison. The nesting is required because R markdown chunks do not support loops.
+**logos/visualize_logos_chunk.R, visualize_logos.Rmd, visualize_logos_allChunks.Rmd and visualize_logos_allChunks2.Rmd:** Nested source files that generate an HTML output of the logos for comparison. The nesting is required because R markdown chunks do not support loops.
 
-License
-___
+## License
 
 MIT License: http://adampritchard.mit-license.org/ or see the [LICENSE](LICENSE) file.
