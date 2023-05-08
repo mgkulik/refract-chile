@@ -26,8 +26,8 @@ AA_GROUPS_NAMES = ['N','P','O']
 AA_GROUPS1 = [[14,18,1,15,20,11,10,13,21],[19,8,16,17,5,3,6,22], [12,2,9], [4,7], [25]]
 AA_GROUPS_NAMES1 = ['N','P','B','A','O']
 
-path = '/home/magoncal/Documents/data/projects/idr_cook/refract_chile/refract-data/results_MBS3/'
-path_out = '/home/magoncal/Documents/data/projects/idr_cook/refract_chile/refract-data/'
+path = os.path.join(os.path.dirname(os.getcwd()),'refract-data/results_MBS3/')
+path_out = os.path.join(os.path.dirname(os.getcwd()),'refract-data/')
 path_temp = path_out+"temp_marb/"
 
 def transform_time(start, end):
@@ -156,63 +156,3 @@ if __name__=="__main__":
     
     time_formated = transform_time(start_time_all, time.time())
     print("Total time: {0}".format(time_formated))
-
-
-def testing_metrics():
-
-    df_ini_all = pd.read_csv(path_out+"all_ini_details.csv")
-    df_96h_all = pd.read_csv(path_out+"all_96h_details.csv")
-    
-    #df_ini_all_X = df_ini_all.loc[df_ini_all['cnt_tpsimp_other']>0, :]
-    #df_ini_all_X = (df_ini_all_X[['promoter']].groupby(['promoter'])['promoter'].count().reset_index(name='count').sort_values(['count'], ascending=False))
-    #sum(df_ini_all_X['count'])
-
-    #df_96h_all_X = df_96h_all.loc[df_96h_all['cnt_tpsimp_other']>0, :]
-    #df_96h_all_X = (df_96h_all_X[['promoter']].groupby(['promoter'])['promoter'].count().reset_index(name='count').sort_values(['count'], ascending=False))
-    #sum(df_96h_all_X['count'])
-    
-    df_ini_all = df_ini_all.loc[df_ini_all['cnt_tpsimp_other']==0, :]
-    df_96h_all = df_96h_all.loc[df_96h_all['cnt_tpsimp_other']==0, :]
-    
-    
-    df_ini_all10 = df_ini_all.groupby('promoter').head(1000).reset_index(drop=True)
-    df_96h_all10 = df_96h_all.groupby('promoter').head(1000).reset_index(drop=True)
-    
-    def prep_calc_hamming_distance(targets):
-        mat_targets = np.tile(np.array([targets]).transpose(), (1,len(targets)))
-        arr_targets = np.array(targets).T
-        hamm = np.array([calc_hamming_distance(i,j) for i, j in it.product(arr_targets, repeat=2)])
-        hamm2 = np.array(hamm).reshape((len(arr_targets), len(arr_targets)))
-        bool_val1 = (hamm>3)&(hamm<6)
-        marb_sel = np.array([i for i in it.product(arr_targets, repeat=2)])[bool_val1, :]
-        sop = np.array([sum(calc_sum_of_pairs(i, j, blosum, -1, -1)) for i, j in it.product(arr_targets, repeat=2)])
-        sop2 = np.array(sop).reshape((len(arr_targets), len(arr_targets)))
-        for v in range(0, len(arr_targets)):
-            idx = (-sop2[v,:]).argsort()
-            names = ", ".join(arr_targets[idx][1:])
-            vals = (-np.sort(-sop2[v,:]))[1:]
-            _, counts = np.unique(vals, return_counts=True)
-            
-            
-        sop_ord = sop2[0, :].argsort()
-        sop3 = sop2[:, sop2[0, :].argsort()]
-    
-    df_ini_all10["hamm_dist"] = df_ini_all10.apply(lambda x: calc_hamming_distance(x["str1"], x["str2"]) if len(x["str1"])>0 else np.nan, axis=1)
-    df_ini_all10['sum_of_pairs'] = df_ini_all10.apply(lambda x: sum(calc_sum_of_pairs(x["str1"], x["str2"], blosum, -5, -1)) if len(x["str1"])>0 else np.nan, axis=1)
-    
-    
-    def calc_hamming_distance(string1, string2): 
-        distance = 0
-        L = len(string1)
-        for i in range(L):
-            if string1[i] != string2[i]:
-                distance += 1
-        return len(string1)-distance
-    
-    
-    def calc_sum_of_pairs(seq1, seq2, matrix, gap_s, gap_e, gap = False):
-        if len(seq1)>0:
-            for A,B in zip(seq1, seq2):
-                diag = ('-'==A) or ('-'==B)
-                yield (gap_e if gap else gap_s) if diag else matrix[(A,B)]
-                gap = diag
