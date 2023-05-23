@@ -8,13 +8,14 @@ The following files are available:
 
 **get_peptide_score.py:** Main function to calculate the score for the provided peptide with 6 standard amino acids.
 In position 0 only C, F, W and Y are accepted and they are not accepted in the other 5 positions.
-At the moment accepts just 1 peptide as an entry and can be run through the terminal with the following code:
+It accepts 1 peptide or a file with 1 peptide per line as input. Can be executed from the terminal with the following code:
 
 ```
-python get_peptide_score.py -i <peptide>
+python get_peptide_score.py -p <peptide> -i <input file> -d <0 or 1>
 ```
 
-*Example:* python get_peptide_score.py -i FEKDAD
+*Example 1:* python get_peptide_score.py -p FEKDAD
+*Example 2:* python get_peptide_score.py -i sample_peptides.txt -d 1
 
 ## Additional functions
 
